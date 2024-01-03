@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from collections import deque
-
+from tkinter import messagebox
 
 class Timer(ttk.Frame):
     def __init__(self, parent, controller, show_settings):
@@ -103,6 +103,9 @@ class Timer(ttk.Frame):
         self.controller.timer_schedule = deque(self.controller.timer_order)
         self.current_timer_label.set(self.controller.timer_schedule[0])
 
+    def show_alert(self):
+        messagebox.showinfo(self.controller.pomodoro.get, "Cycle Completed! Take a Break!")
+
     def decrement_time(self):
         current_time = self.current_time.get()
 
@@ -122,7 +125,7 @@ class Timer(ttk.Frame):
             self.controller.timer_schedule.rotate(-1)
             next_up = self.controller.timer_schedule[0]
             self.current_timer_label.set(next_up)
-
+            self.show_alert()
             if next_up == "Pomodoro":
                 pomodoro_time = int(self.controller.pomodoro.get())
                 self.current_time.set(f"{pomodoro_time:02d}:00")

@@ -3,11 +3,11 @@ from tkinter import ttk
 from collections import deque
 from frames import Timer, Settings
 
-COLOUR_PRIMARY = "#2e3f4f"
-COLOUR_SECONDARY = "#293846"
-COLOUR_LIGHT_BACKGROUND = "#fff"
-COLOUR_LIGHT_TEXT = "#eee"
-COLOUR_DARK_TEXT = "#8095a8"
+COLOUR_PRIMARY = "#64b5f6"  # Bright Blue
+COLOUR_SECONDARY = "#4fc3f7"  # Light Blue
+COLOUR_LIGHT_BACKGROUND = "#f3f3f3"  # Light Gray
+COLOUR_LIGHT_TEXT = "#333"  # Dark Gray
+COLOUR_DARK_TEXT = "#1565c0"  # Deep Blue
 
 
 class PomodoroTimer(tk.Tk):
